@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center" style="background-image:url(../static/images/brush.jpeg); margin-right:40px;">
+    <h1>DeepBrush</h1>
+    
+  </div>
+
+<style>
+.imgdes{
+    padding: 20px 20px;
+}
+</style>
+<div style="margin=-350px">
+      <form class="form-inline my-2 my-lg-0" action = "http://localhost:5000/" method = "POST"
+        enctype = "multipart/form-data" name="content">
+
+          <img src = "{{ content_image }}" alt="User Image" height="400" width="500" class="imgdes"/>
+
+          <input type = "file" name = "file" value = "content_file" class=""><br/>
+
+</div>
+<div>
+<center>
+            <label>
+			  <img src="../static/images/wave.jpg" height="100px" width="100px"><br>
+              <input type="radio" name="activity" value="0"/>The Wave
+            </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <label>
+              <img src="../static/images/starry.jpg" height="100px" width="100px"><br>
+              <input type="radio" name="activity" value="1"/>Starry Night
+            </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <label>
+			  <img src="../static/images/udnie.jpg" height="100px" width="100px"><br>
+              <input type="radio" name="activity" value="2"/>Udnie
+            </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+             <label>
+			  <img src="../static/images/muse.jpg" height="100px" width="100px"><br>
+              <input type="radio" name="activity" value="3"/>La Muse
+            </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <label>
+			  <img src="../static/images/scream.jpg" height="100px" width="100px"><br>
+              <input type="radio" name="activity" value="4"/>The Scream
+            </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+			<label>
+			  <img src="../static/images/composition.jpg" height="100px" width="100px"><br>
+              <input type="radio" name="activity" value="5"/>Composition
+            </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+			<br><br>
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Confirm Image & Style Selections</button>
+     </form>
+</center>
+<br><br>
+</div>
+<div align="center">
+<center>
+     <form class="form-inline my-2 my-lg-0" action = "http://localhost:5000/result" method = "POST">
+       <p>
+         <button class="btn btn-lg btn-primary btn-block" width='100px'   type="submit" align='center'>DeepBrush My Image!</button>
+       </p>
+     </form>
+</center>
+<div>
+{% endblock %}
